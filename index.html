@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Delivery App (HTML only)</title>
+</head>
+<body>
+  <h1>QuickBite — Simple Delivery</h1>
+  <p>A tiny HTML-only demo of a delivery app page. No CSS, no JavaScript.</p>
+
+  <!-- Customer / Delivery info -->
+  <form action="mailto:example@example.com" method="post" enctype="text/plain">
+    <fieldset>
+      <legend>Contact & Delivery</legend>
+
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="Customer Name" required><br /><br />
+
+      <label for="phone">Phone (required):</label><br />
+      <!-- tel type gives mobile-friendly keypad on phones -->
+     <label for="phone">Phone (10 digits required):</label><br />
+<input type="tel" id="phone" name="Phone" 
+       pattern="[0-9]{10}" 
+       maxlength="10" 
+       required 
+       placeholder="phone number">
+<br /><br />
+
+
+      <label for="address">Delivery Address:</label><br />
+      <textarea id="address" name="Address" rows="3" cols="40" required placeholder="Street, City, Pincode"></textarea>
+    </fieldset>
+
+    <br />
+
+    <!-- Simple menu: each item uses a select to choose qty -->
+    <fieldset>
+      <legend>Menu</legend>
+
+      <div>
+        <strong>Veg Burger — ₹120</strong><br />
+        <label for="veg_qty">Qty:</label>
+        <select id="veg_qty" name="Veg Burger Qty">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <br />
+
+      <div>
+        <strong>Paneer Wrap — ₹140</strong><br />
+        <label for="paneer_qty">Qty:</label>
+        <select id="paneer_qty" name="Paneer Wrap Qty">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <br />
+
+      <div>
+        <strong>Fries — ₹60</strong><br />
+        <label for="fries_qty">Qty:</label>
+        <select id="fries_qty" name="Fries Qty">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+      <br />
+
+      <div>
+        <strong>Cold Drink — ₹40</strong><br />
+        <label for="drink_qty">Qty:</label>
+        <select id="drink_qty" name="Cold Drink Qty">
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <br />
+
+    <!-- Special instructions -->
+    <fieldset>
+      <legend>Special Instructions</legend>
+      <label for="notes">Notes for the restaurant/delivery:</label><br />
+      <textarea id="notes" name="Notes" rows="3" cols="50" placeholder="E.g. No onions, ring the bell"></textarea>
+    </fieldset>
+
+    <br />
+
+    <!-- Submit (mailto: opens email client with filled content) -->
+    <p>
+      <input type="submit" value="Place Order (opens email)">
+      <input type="reset" value="Clear">
+    </p>
+
+    <p style="font-size:small;">
+      Note: This is an HTML-only demo. The form uses <code>mailto:</code> to simulate sending an order
+      by opening the default email client. To make a real working app you would add a backend or JavaScript.
+    </p>
+  </form>
+</body>
+</html>
